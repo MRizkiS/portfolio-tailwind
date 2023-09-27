@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,9 @@
       <div class="container">
         <div class="flex items-center justify-between relative">
           <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-primary block py-6"
+            <a
+              href="#home"
+              class="font-bold text-primary block py-6 text-base relative mx-8 group-hover:text-primary after:bg-primary after:flex after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
               >Muhammad Rizki Syaumi</a
             >
           </div>
@@ -45,28 +47,28 @@
                 <li class="group">
                   <a
                     href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 relative mx-8 flex group-hover:text-primary after:bg-primary after:flex after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
                     >Home</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#about"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 relative mx-8 flex group-hover:text-primary after:bg-primary after:flex after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
                     >About</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portfolio"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 relative mx-8 flex group-hover:text-primary after:bg-primary after:flex after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
                     >Portfolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 relative mx-8 flex group-hover:text-primary after:bg-primary after:flex after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
                     >Contact</a
                   >
                 </li>
@@ -82,10 +84,10 @@
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="font-bold text-4xl text-primary md:text-2xl uppercase">
-              Hi, I'm Rizki
-            </h1>
-            <h2 class="mt-2 font-semibold">Junior Frontend Developer</h2>
+            <h1
+              class="font-bold text-4xl text-primary md:text-2xl"
+              id="typing-container"
+            ></h1>
             <p class="mt-3 text-md leading-relaxed mb-5 text-left">
               Junior level experience in web design and development with
               knowledge in producing quality work.
@@ -98,6 +100,45 @@
               >Download CV</a
             >
           </div>
+          <script>
+            // JavaScript for Typing Effect
+            const texts = ["Hi, I'm Rizki", "Junior Frontend Developer"];
+            const typingContainer = document.getElementById("typing-container");
+            let currentTextIndex = 0;
+            let currentText = "";
+            let isDeleting = false;
+            let typingSpeed = 100; // Adjust the typing speed (milliseconds per character)
+
+            function type() {
+              const text = texts[currentTextIndex];
+              if (isDeleting) {
+                currentText = text.substring(0, currentText.length - 1);
+              } else {
+                currentText = text.substring(0, currentText.length + 1);
+              }
+
+              typingContainer.innerHTML = currentText;
+
+              let typingDelay = isDeleting ? typingSpeed / 2 : typingSpeed;
+
+              if (!isDeleting && currentText === text) {
+                typingDelay = 1500; // Pause after typing
+                isDeleting = true;
+              } else if (isDeleting && currentText === "") {
+                isDeleting = false;
+                currentTextIndex++;
+                if (currentTextIndex === texts.length) {
+                  currentTextIndex = 0;
+                }
+              }
+
+              setTimeout(type, typingDelay);
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+              type();
+            });
+          </script>
           <div class="w-full self-end px-4 lg:w-1/2">
             <div
               class="relative lg:mt-9 lg:right-0 bg-gradient-to-b bg-primary rounded-full w-80 h-90 mt-10"
@@ -126,7 +167,11 @@
               My full name is
               <span class="font-bold text-primary uppercase"
                 >Muhammad Rizki Syaumi</span
-              >, I am 23 years old. I am a person who is easy to socialize, disciplined and quick to learn. I have a strong interest in the field of Web Programming. I am currently looking for job opportunities that can give me the opportunity to continue developing.
+              >,I am 23 years old. I am a person who is easy to socialize,
+              disciplined and quick to learn. I have a strong interest in the
+              field of Web Programming. I am currently looking for job
+              opportunities that can give me the opportunity to continue
+              developing.
             </h2>
           </div>
           <div class="w-full px-4 lg:w-1/2">
