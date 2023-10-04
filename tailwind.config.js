@@ -21,6 +21,8 @@ module.exports = {
         bootstrap: "#7952B3",
         tailwind: "#06B6D4",
         kuning: "#F7DF1E",
+        sun: "#fff35f",
+        moon: "#91A3B0",
       },
       screens: {
         "2xl": "1320px",
