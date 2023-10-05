@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#ef767a",
+        primary: "#5cb85c",
         secondary: "#ced4da",
         third: "#ced4da",
         instagram: "#E4405F",
@@ -29,5 +29,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };
+
+//..
